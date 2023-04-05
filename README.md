@@ -18,3 +18,9 @@ jobs:
   health-checks:
     uses: equator-analytics/python-health-checks/.github/workflows/python-health-checks.yml@main
 ```
+
+You will of course need to set up the following commands in your `Pipfile` -
+* `lint`
+* `style-check`
+* `type-check`
+* `test`
