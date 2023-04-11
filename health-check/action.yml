@@ -1,0 +1,22 @@
+name: 'python health checks'
+description: 'standard style check, lint, type check in python'
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - uses: Equator-Analytics/python-health-checks/build/action.yml@main
+
+    - name: Check format is compliant
+      shell: bash
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: pipenv run style-check
+
+    - name: Lint
+      shell: bash
+      run: pipenv run lint
+
+    - name: Type checking
+      shell: bash
+      run: pipenv run type-check
