@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v3
-    - uses: Equator-Analytics/python-health-checks/build/action.yml@main
+    - uses: equator-analytics/python-health-checks/build@main
 
     - name: Check format is compliant
       shell: bash
