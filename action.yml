@@ -1,5 +1,5 @@
-name: 'python pipenv build'
-description: 'set up the python app packages from pipenv'
+name: 'python health checks'
+description: 'A standard style check, lint, type check in the pipenv python environment'
 
 runs:
   using: composite
@@ -31,3 +31,18 @@ runs:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         pipenv sync --dev
+
+
+    - name: Check format is compliant
+      shell: bash
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: pipenv run style-check
+
+    - name: Lint
+      shell: bash
+      run: pipenv run lint
+
+    - name: Type checking
+      shell: bash
+      run: pipenv run type-check
