@@ -1,7 +1,8 @@
 name: 'python health checks'
 description: 'A standard style check, lint, type check in the pipenv python environment'
-icon: check-square
-color: green
+branding:
+  icon: check-square
+  color: green
 
 runs:
   using: composite
