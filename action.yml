@@ -4,6 +4,12 @@ branding:
   icon: check-square
   color: green
 
+inputs:
+  checktests:
+    description: 'Flag this to false in order to run unit tests on your own, instead of via this workflow'
+    required: false
+    default: true
+
 runs:
   using: composite
   steps:
@@ -48,3 +54,8 @@ runs:
     - name: Type checking
       shell: bash
       run: pipenv run type-check
+
+    - name: Testing
+      if: inputs.checktests
+      shell: bash
+      run: pipenv run test
