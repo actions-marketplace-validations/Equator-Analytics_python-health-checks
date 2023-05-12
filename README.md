@@ -35,7 +35,7 @@ jobs:
   your_job:
     steps:
       - name: 'set up python and run health checks'
-        uses: Equator-Analytics/python-health-checks@v2.0.0
+        uses: Equator-Analytics/python-health-checks@v2.1.1
 ```
 
 If special testing setup is required you can override the testing step as follows
@@ -46,7 +46,7 @@ jobs:
   your_job:
     steps:
       - name: 'set up python and run health checks'
-        uses: Equator-Analytics/python-health-checks@v2.0.0
+        uses: Equator-Analytics/python-health-checks@v2.1.1
         with:
           checktests: false
 ```
