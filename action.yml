@@ -56,6 +56,6 @@ runs:
       run: pipenv run type-check
 
     - name: Testing
-      if: inputs.checktests
+      if: ${{ env.INPUT_CHECKTESTS }}
       shell: bash
       run: pipenv run test
