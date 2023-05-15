@@ -4,6 +4,8 @@ branding:
   icon: check-square
   color: green
 
+# inputs usage based on
+#  https://github.com/actions/reusable-workflows/blob/main/.github/workflows/check-dist.yml
 inputs:
   checktests:
     description: 'Flag this to false in order to run unit tests on your own, instead of via this workflow'
@@ -56,6 +58,6 @@ runs:
       run: pipenv run type-check
 
     - name: Testing
-      if: ${{ env.INPUT_CHECKTESTS }}
+      if: ${{inputs.checktests}}
       shell: bash
       run: pipenv run test
